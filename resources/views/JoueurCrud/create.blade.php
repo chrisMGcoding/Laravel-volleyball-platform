@@ -41,7 +41,10 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Genre :</label>
-            <input type="text" class="form-control" name="genre" value="{{ old('genre') }}">
+            <select name="genre" class="form-control" value="{{ old('genre') }}">
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Origine :</label>

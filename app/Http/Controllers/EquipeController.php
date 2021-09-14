@@ -17,10 +17,8 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        $joueur = Joueur::all();
         $equipe = Equipe::all();
-        $role = Role::all();
-        return view('pages.equipe', compact('equipe', 'joueur', 'role'));
+        return view('pages.equipe', compact('equipe'));
     }
 
     /**
@@ -84,8 +82,7 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        $continent = Continent::all();
-        return view('EquipeCrud.edit', compact('equipe', 'continent'));
+        return view('EquipeCrud.edit', compact('equipe'));
     }
 
     /**

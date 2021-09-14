@@ -31,7 +31,7 @@ class Joueur extends Model
         return $this -> belongsTo(Role::class);
     }
 
-    public function photos() {
+    public function photo() {
         return $this -> hasOne(Photo::class);
     }
 }

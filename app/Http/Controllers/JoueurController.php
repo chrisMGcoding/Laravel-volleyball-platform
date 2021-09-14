@@ -135,6 +135,7 @@ class JoueurController extends Controller
         $joueur -> role_id = $request -> role_id;
         $joueur -> equipe_id = $request -> equipe_id;
 
+        $photo = Photo::find($joueur->photo->id);
 
         Storage::disk("public") -> delete("image/" . $photo->url);
 
@@ -154,8 +155,10 @@ class JoueurController extends Controller
      * @param  \App\Models\Joueur  $joueur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Joueur $joueur, Photo $photo)
+    public function destroy(Joueur $joueur)
     {
+        $photo = Photo::find($joueur->photo->id);
+
         Storage::disk('public') -> delete('image/' . $photo->url);
 
         $joueur -> delete();
